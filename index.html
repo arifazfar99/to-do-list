@@ -1,25 +1,57 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>To-Do List</title>
     <style>
       .container {
         font-family: Arial, serif;
+        text-align: center;
+        min-width: none;
+        :250px ;
+      }
+
+      .header {
+        background-color: #f44336;
+        padding: 30px 40px;
+        color: white;
+        text-align: center;
+      }
+
+      .header:after {
+        content: "";
+        display: table;
+        clear: both;
       }
 
       ul {
         list-style-type: none;
+        margin: 0;
         padding: 0;
+        text-align: center;
       }
 
       li {
-        display: flex;
-        align-items: center;
         margin-bottom: 5px;
+        text-transform: capitalize;
+      }
+
+      ul li {
+        padding: 12px 8px 12px 40px;
+        background: #eee;
+      }
+
+      ul li:hover {
+        background: #ddd;
+      }
+
+      ul li:nth-child(odd) {
+        background: #f9f9f9;
       }
 
       input[type="text"] {
         margin-right: 5px;
+        width: 20%;
       }
 
       .completed {
@@ -30,9 +62,13 @@
   </head>
   <body>
     <div class="container">
-      <h1>To-Do List</h1>
-      <input id="taskInput" type="text" placeholder="Add new task" />
-      <button id="addTaskButton">Add Task</button>
+      <div class="header">
+        <h1>To-Do List</h1>
+        <div>
+          <input id="taskInput" type="text" placeholder="Add new task" />
+          <button id="addTaskButton">Add Task</button>
+        </div>
+      </div>
       <ul id="taskList"></ul>
 
       <script src="script.js"></script>
